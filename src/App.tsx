@@ -1,12 +1,12 @@
+import { useState } from 'react';
 import { Button, Container, HStack, Heading, Stack } from '@chakra-ui/react';
 import Dropdown from './components/Dropdown';
 import data from './data/fruits.json';
-import { useState } from 'react';
 
 function App() {
-  const fruits = data.map(fruit => fruit.name);
   const [shoppingCart, setShoppingCart] = useState<string[]>([]);
   const [selectedItem, setSelectedItem] = useState('');
+  const fruits = data.map(fruit => fruit.name);
 
   function handleSelected(item: string) {
     setSelectedItem(item);
