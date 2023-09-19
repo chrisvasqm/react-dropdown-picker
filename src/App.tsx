@@ -1,8 +1,10 @@
+import { Container, Heading } from '@chakra-ui/react';
+
 function App() {
   return (
-    <>
-      <h1>Dropdown Picker App</h1>
-    </>
+    <Container size={['md', 'sm']}>
+      <Heading>Dropdown Picker App</Heading>
+    </Container>
   );
 }
 
