@@ -1,4 +1,4 @@
-import { Container, Heading } from '@chakra-ui/react';
+import { Button, Container, HStack, Heading } from '@chakra-ui/react';
 import Dropdown from './components/Dropdown';
 import data from './data/fruits.json';
 
@@ -9,7 +9,10 @@ function App() {
     <Container size={['md', 'sm']}>
       <Heading>Dropdown Picker App</Heading>
 
-      <Dropdown items={fruits} />
+      <HStack>
+        <Dropdown items={fruits} />
+        <Button colorScheme='blue'>Add</Button>
+      </HStack>
     </Container>
   );
 }

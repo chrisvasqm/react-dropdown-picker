@@ -3,6 +3,7 @@ import { Select } from '@chakra-ui/react';
 interface Props {
   items: string[];
 }
+
 function Dropdown({ items }: Props) {
   return (
     <Select placeholder='Select option'>
