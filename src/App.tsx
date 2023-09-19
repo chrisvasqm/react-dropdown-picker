@@ -16,6 +16,7 @@ function App() {
     if (selectedItem === '') return;
 
     setShoppingCart([...shoppingCart, selectedItem]);
+    setSelectedItem('');
   }
 
   return (
