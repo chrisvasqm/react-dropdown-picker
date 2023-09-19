@@ -6,9 +6,14 @@ import { useState } from 'react';
 function App() {
   const fruits = data.map(fruit => fruit.name);
   const [shoppingCart, setShoppingCart] = useState<string[]>([]);
+  const [selectedItem, setSelectedItem] = useState('');
 
   function handleSelected(item: string) {
-    setShoppingCart([...shoppingCart, item]);
+    setSelectedItem(item);
+  }
+
+  function handleAdd() {
+    setShoppingCart([...shoppingCart, selectedItem]);
   }
 
   return (
@@ -20,7 +25,9 @@ function App() {
 
         <HStack spacing={2}>
           <Dropdown items={fruits} onSelected={handleSelected} />
-          <Button colorScheme='blue'>Add</Button>
+          <Button colorScheme='blue' onClick={handleAdd}>
+            Add
+          </Button>
         </HStack>
 
         <ol>{shoppingCart && shoppingCart.map(item => <li>{item}</li>)}</ol>
