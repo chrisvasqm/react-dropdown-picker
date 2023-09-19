@@ -16,6 +16,8 @@ function App() {
       <Stack spacing={2}>
         <Heading>Dropdown Picker App</Heading>
 
+        <Heading fontSize={'2xl'}>Items: {shoppingCart.length}</Heading>
+
         <HStack spacing={2}>
           <Dropdown items={fruits} onSelected={handleSelected} />
           <Button colorScheme='blue'>Add</Button>
