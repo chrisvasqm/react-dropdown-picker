@@ -13,6 +13,8 @@ function App() {
   }
 
   function handleAdd() {
+    if (selectedItem === '') return;
+
     setShoppingCart([...shoppingCart, selectedItem]);
   }
 
