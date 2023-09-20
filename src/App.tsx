@@ -6,7 +6,7 @@ import data from './data/fruits.json';
 function App() {
   const [shoppingCart, setShoppingCart] = useState<string[]>([]);
   const [selectedItem, setSelectedItem] = useState('');
-  const fruits = data.map(fruit => fruit.name);
+  const [fruits, setFruits] = useState(data.map(fruit => fruit.name));
 
   function handleSelected(item: string) {
     setSelectedItem(item);
@@ -16,6 +16,7 @@ function App() {
     if (selectedItem === '') return;
 
     setShoppingCart([...shoppingCart, selectedItem]);
+    setFruits(prevFruits => prevFruits.filter(fruit => fruit !== selectedItem));
   }
 
   return (
